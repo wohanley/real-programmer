@@ -23,7 +23,7 @@ object Bot {
     val filter = new FilterQuery()
     filter.language(Array("en"))
     filter.locations(Array(Array(-180, -90), Array(180, 90)))
-    filter.filterLevel("low")
+    filter.filterLevel("medium")
 
     stream.filter(filter)
   }
