@@ -12,13 +12,15 @@ import twitter4j._
 object Bot {
 
   val timer = new Timer()
-  val filter = new FilterQuery()
-  val stream = new TwitterStreamFactory(envConfig).getInstance()
   val twitter = new TwitterFactory(envConfig).getInstance()
   var listening = true
 
   def main(args: Array[String]): Unit = {
+
+    val stream = new TwitterStreamFactory(envConfig).getInstance()
     stream.addListener(HoseListener)
+
+    val filter = new FilterQuery()
     filter.language(Array("en"))
     filter.locations(Array(Array(-180, -90), Array(180, 90)))
     filter.filterLevel("none")
