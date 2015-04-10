@@ -8,13 +8,9 @@ package object core {
 
   /** Find the first base form verb phrase in the text. */
   def action(text: String): Option[String] =
-    ParserTool.parseLine(text, englishParser, 1).headOption.flatMap { parse =>
-      (filter(isAcceptableVerbPhrase)
-        (Seq())
-        (parse)).headOption
-    }.map { verbParse =>
-      verbParse.toString()
-    }
+    (filter(isAcceptableVerbPhrase)
+      (Seq())
+      (parse(text))).headOption.map { verbParse => verbParse.toString() }
 
   def isAcceptableVerbPhrase(node: Parse): Boolean = {
     node.getType() == "VB" ||
