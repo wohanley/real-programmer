@@ -18,5 +18,5 @@ libraryDependencies += "org.apache.opennlp" % "opennlp-tools" % "1.5.3"
 // twitter4j
 libraryDependencies +=  "org.twitter4j" % "twitter4j-stream" % "4.0.3"
 
-// robots
-libraryDependencies += "com.wohanley" %% "robots" % "0.1.0-SNAPSHOT"
+// robots is in lib for now
+//libraryDependencies += "com.wohanley" %% "robots" % "0.1.0-SNAPSHOT"
