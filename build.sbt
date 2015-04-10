@@ -2,7 +2,7 @@ import NativePackagerKeys._
 
 packageArchetype.java_application
 
-name := "real-programmers"
+name := "realprogrammers"
 version := "0.1"
 
 scalaVersion := "2.11.6"
