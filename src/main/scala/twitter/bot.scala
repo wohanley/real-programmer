@@ -37,7 +37,7 @@ object Bot {
 
     def onStatus(status: Status): Unit = {
       if (listening) {
-        action(status.getText()).map { (action) =>
+        action(status.getText()).map { action =>
           tweet(twitter)("real programmers " + action)
           listening = false
           timer.schedule(new ListenToHose, 300000)
