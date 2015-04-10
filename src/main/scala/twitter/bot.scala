@@ -41,8 +41,8 @@ object Bot {
       if (listening) {
         action(status.getText()).map { action =>
           tweet(twitter)("real programmers " + action)
-//          listening = false
-//          timer.schedule(new ListenToHose, 300000)
+          listening = false
+          timer.schedule(new ListenToHose, 3600000)
         }
       }
     }
