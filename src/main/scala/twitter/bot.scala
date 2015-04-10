@@ -40,7 +40,7 @@ object Bot {
         action(status.getText()).map { (action) =>
           println("real programmers " + action)
           listening = false
-          timer.schedule(new ListenToHose, 10000)
+          timer.schedule(new ListenToHose, 300000)
         }
       }
     }
