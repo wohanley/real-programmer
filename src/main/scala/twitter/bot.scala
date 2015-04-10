@@ -23,7 +23,7 @@ object Bot {
     val filter = new FilterQuery()
     filter.language(Array("en"))
     filter.locations(Array(Array(-180, -90), Array(180, 90)))
-    filter.filterLevel("medium")
+    filter.filterLevel("low")
 
     stream.filter(filter)
   }
@@ -40,9 +40,9 @@ object Bot {
     def onStatus(status: Status): Unit = {
       if (listening) {
         action(status.getText()).map { action =>
-          tweet(twitter)("real programmers " + action)
           listening = false
-          timer.schedule(new ListenToHose, 3600000)
+          timer.schedule(new ListenToHose, 600000)
+          tweet(twitter)("real programmers " + action)
         }
       }
     }
